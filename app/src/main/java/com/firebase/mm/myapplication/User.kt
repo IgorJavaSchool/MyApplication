@@ -1,9 +1,9 @@
 package com.firebase.mm.myapplication
 
+import android.annotation.SuppressLint
 import android.os.Parcel
 import android.os.Parcelable
 import com.google.firebase.firestore.GeoPoint
-import java.lang.reflect.Method
 import java.util.HashMap
 
 /**
@@ -11,7 +11,7 @@ import java.util.HashMap
  */
 
 
-enum class Metho(var link: String) {
+enum class Method(var link: String) {
     TRAIN("train"),
     BUS("bus"),
     CAR("car"),
@@ -26,6 +26,7 @@ enum class SocialNetwork(var link: String) {
     FB("FB"),
     TG("TG")
 }
+@SuppressLint("ParcelCreator")
 data class User(var name: String = "",
                 var lastName: String = "",
                 var age: Int = 0,
@@ -40,11 +41,11 @@ data class User(var name: String = "",
                 var kilometers: Long = 0,
                 var route: String = "",
                 var cities: HashMap<String, String> = hashMapOf<String, String>(),
-                var method: HashMap<String, Boolean> = hashMapOf(Metho.BUS.link to false,
-                        Metho.TRAIN.link to false,
-                        Metho.PLANE.link to false,
-                        Metho.CAR.link to false,
-                        Metho.HITCHHIKING.link to false),
+                var method: HashMap<String, Boolean> = hashMapOf(Method.BUS.link to false,
+                        Method.TRAIN.link to false,
+                        Method.PLANE.link to false,
+                        Method.CAR.link to false,
+                        Method.HITCHHIKING.link to false),
                 var dates: HashMap<String, Long> = hashMapOf<String, Long>(),
                 var budget: Long = 0,
                 var budgetPosition: Int = 0,
