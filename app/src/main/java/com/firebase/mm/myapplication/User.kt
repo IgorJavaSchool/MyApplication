@@ -1,8 +1,5 @@
 package com.firebase.mm.myapplication
 
-import android.annotation.SuppressLint
-import android.os.Parcel
-import android.os.Parcelable
 import com.google.firebase.firestore.GeoPoint
 import java.util.HashMap
 
@@ -26,7 +23,7 @@ enum class SocialNetwork(var link: String) {
     FB("FB"),
     TG("TG")
 }
-@SuppressLint("ParcelCreator")
+
 data class User(var name: String = "",
                 var lastName: String = "",
                 var age: Int = 0,
@@ -55,12 +52,4 @@ data class User(var name: String = "",
                 var sex: Int = 0,
                 var socialNetwork: HashMap<String, String> = hashMapOf<String, String>(),
                 var data: Long = 0,
-                var urlPhoto: String = "https://www.ischool.berkeley.edu/sites/default/files/default_images/avatar.jpeg") : Parcelable {
-    override fun describeContents(): Int {
-        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
-    }
-
-    override fun writeToParcel(dest: Parcel?, flags: Int) {
-        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
-    }
-}
+                var urlPhoto: String = "https://www.ischool.berkeley.edu/sites/default/files/default_images/avatar.jpeg")
